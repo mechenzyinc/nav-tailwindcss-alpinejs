@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav - Tailwindcss & AlpineJS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://use.fontawesome.com/d9d0a73b1a.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header class="bg-gray-900" x-data="{ toggled: false }">
+      <nav class="flex items-center justify-between px-8 py-4">
+        <!-- Logo -->
+        <div>
+          <!-- <img src="img/mechenzy.svg" alt="" /> -->
+          <object
+            class="h-12 sm:h-16"
+            data="img/mechenzy.svg"
+            type="image/svg+xml"
+          ></object>
+        </div>
+
+        <!-- Large Screen Menu -->
+        <div class="hidden sm:block text-gray-500">
+          <div class="ml-10 flex items-baseline">
+            <a
+              href="#"
+              class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+              >About</a
+            >
+            <a
+              href="#"
+              class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+              >Portfolio</a
+            >
+            <a
+              href="#"
+              class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="hidden sm:block text-gray-500">
+          <a
+            class="px-1 hover:text-white focus:text-white focus:outline-none"
+            href="#"
+          >
+            <i class="fa fa-facebook fa-2x"></i>
+          </a>
+          <a
+            class="px-1 hover:text-white focus:text-white focus:outline-none"
+            href="#"
+          >
+            <i class="fa fa-twitter fa-2x"></i>
+          </a>
+          <a
+            class="px-1 hover:text-white focus:text-white focus:outline-none"
+            href=""
+          >
+            <i class="fa fa-instagram fa-2x"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="sm:hidden">
+          <button
+            @click="toggled = true"
+            class="text-gray-500 hover:text-white focus:text-white focus:outline-none"
+            type="button"
+          >
+            <i
+              x-show="!toggled"
+              class="fa fa-bars fa-2x"
+              aria-hidden="true"
+            ></i>
+            <i
+              x-show="toggled"
+              class="fa fa-times fa-2x"
+              aria-hidden="true"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Screen Menu  -->
+      <div
+        x-show="toggled"
+        @click.away="toggled = false"
+        class="block sm:hidden px-5 pt-2 pb-3 sm:px-3"
+      >
+        <a
+          href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+          >About</a
+        >
+        <a
+          href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+          >Services</a
+        >
+        <a
+          href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+          >Portfolio</a
+        >
+        <a
+          href="#"
+          class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+          >Contact</a
+        >
+        <!-- Social Media Links -->
+        <div class="sm:hidden mt-4 text-gray-500">
+          <a
+            class="px-1 hover:text-white focus:text-white focus:outline-none"
+            href="#"
+          >
+            <i class="fa fa-facebook fa-2x"></i>
+          </a>
+          <a
+            class="px-1 hover:text-white focus:text-white focus:outline-none"
+            href="#"
+          >
+            <i class="fa fa-twitter fa-2x"></i>
+          </a>
+          <a
+            class="px-1 hover:text-white focus:text-white focus:outline-none"
+            href=""
+          >
+            <i class="fa fa-instagram fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
